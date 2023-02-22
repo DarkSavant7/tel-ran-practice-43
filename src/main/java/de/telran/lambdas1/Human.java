@@ -1,4 +1,4 @@
-package de.telran;
+package de.telran.lambdas1;
 
 public class Human implements Moving {
     @Override

@@ -1,16 +1,10 @@
-package de.telran;
+package de.telran.lambdas1;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Comparator;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.function.BiConsumer;
-import java.util.function.Consumer;
 import java.util.function.Predicate;
-import java.util.function.Supplier;
-import java.util.function.UnaryOperator;
 
 public class StreamApi {
 
@@ -34,8 +28,7 @@ public class StreamApi {
     }
 
     private static void functionsExample() {
-        BiConsumer<String, Integer> consumer = (str, integer)
-                -> System.out.printf("Str: %s, int: %d\n", str, integer);
+
 
         List<OuterClass> outers = new ArrayList<>(List.of(
                 new OuterClass(),
@@ -43,6 +36,18 @@ public class StreamApi {
         ));
 
         outers.removeIf(new PredicateForComplicatedClass());
+        outers.removeIf(o -> o.getInner() != null);
+
+        Predicate<OuterClass> predicate1 = new Predicate<OuterClass>() {
+            @Override
+            public boolean test(OuterClass outerClass) {
+                return outerClass.getInner() != null;
+            }
+        };
+
+        Predicate<OuterClass> predicate2 = outer -> outer.getInner() != null;
+
+        outers.removeIf(predicate2);
     }
 
     private static void anonymousExample() {

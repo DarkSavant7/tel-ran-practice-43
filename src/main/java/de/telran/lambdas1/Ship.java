@@ -1,4 +1,4 @@
-package de.telran;
+package de.telran.lambdas1;
 
 public class Ship implements Moving {
     @Override
