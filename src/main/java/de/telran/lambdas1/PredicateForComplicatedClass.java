@@ -1,4 +1,4 @@
-package de.telran;
+package de.telran.lambdas1;
 
 import java.util.function.Predicate;
 
