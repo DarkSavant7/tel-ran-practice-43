@@ -1,6 +1,7 @@
 package de.telran.lambdas2;
 
 import java.math.BigDecimal;
+import java.util.Objects;
 
 public class Employee {
     private String name;
@@ -49,12 +50,27 @@ public class Employee {
         this.age = age;
     }
 
+    public Employee() {
+    }
+
     public Employee(String name, String lastName, BigDecimal salary, String position, Integer age) {
         this.name = name;
         this.lastName = lastName;
         this.salary = salary;
         this.position = position;
         this.age = age;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Employee employee)) return false;
+        return Objects.equals(name, employee.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 
     @Override

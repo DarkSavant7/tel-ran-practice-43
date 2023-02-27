@@ -22,6 +22,14 @@ public class LambdaExample {
 //        simpleExample();
 //        streamExample();
 
+        String text = """
+                ol[jnerfgo[jknefvoj[nevffolnj[
+                njkervlknle[wfjknvo[jwertnb
+                ljk[kwernboj[nerqgonoqerngijwetbp
+                """;
+
+        String[] arr = text.split(" ");
+
         List<List<Employee>> complicatedStruct = List.of(
                 List.of(
                         new Employee("Emp1", "Surname1", new BigDecimal(100L), "driver", 35),
