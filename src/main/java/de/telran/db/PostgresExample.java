@@ -117,7 +117,7 @@ public class PostgresExample {
     private static void connect() throws SQLException {
         //Раньше требовалось проинициализировать драйвер
 //        Class.forName("org.sqlite.JDBC");
-        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=gb_students", "postgres", "admin");
+        connection = DriverManager.getConnection("jdbc:postgresql://localhost:5432/postgres?currentSchema=students", "postgres", "admin");
         statement = connection.createStatement();
         ps = connection.prepareStatement(insertStatement);
 //        CallableStatement cs = connection.prepareCall(exampleCall);
