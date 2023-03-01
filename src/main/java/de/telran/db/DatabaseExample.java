@@ -25,7 +25,7 @@ public class DatabaseExample {
 //            simpleUpdate();
 //            simpleRead();
 //            notReallyCorrectInsert("Petya Petrov", 75);
-//            notReallyCorrectInsert("Sidor Sidorov", 75);
+//            notReallyCorrectInsert("Sidor Sidorov", 65);
 //            notReallyCorrectInsert("Sidor Sidorov', 75); delete from students;", 75);
 //            preparedInsert("Sidor Sidorov", 75);
 //            preparedInsert("Sidor Sidorov', 75); delete from students;", 75);
@@ -68,6 +68,7 @@ public class DatabaseExample {
     private static void preparedInsert(String name, int score) throws SQLException {
         ps.setString(1, name);
         ps.setInt(2, score);
+//        ps.setObject();
         ps.executeUpdate();
     }
 
